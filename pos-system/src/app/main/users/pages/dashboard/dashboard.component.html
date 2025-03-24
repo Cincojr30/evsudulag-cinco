@@ -1,0 +1,37 @@
+<div class="dashboard">
+    <header class="dashboard-header">
+      <h1>POS Dashboard</h1>
+      <button class="logout-btn" (click)="logout()">Logout</button>
+    </header>
+  
+    <div class="stats-container">
+      <div class="card" *ngFor="let stat of stats">
+        <div class="icon">{{ stat.icon }}</div>
+        <h2>{{ stat.title }}</h2>
+        <p>{{ stat.value }}</p>
+      </div>
+    </div>
+  
+    <div class="transactions">
+      <h2>Recent Transactions</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Transaction ID</th>
+            <th>Customer</th>
+            <th>Amount</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let txn of recentTransactions">
+            <td>{{ txn.id }}</td>
+            <td>{{ txn.customer }}</td>
+            <td>{{ txn.amount }}</td>
+            <td>{{ txn.date }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
